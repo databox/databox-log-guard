@@ -50,6 +50,9 @@ namespace :deploy do
     end
   end
 
-
+  desc "Start the Unicorn process when it isn't already running."
+  task :start do
+    run "cd #{current_path} && #{current_path}/bin/unicorn -Dc #{shared_path}/config/unicorn.rb -E production -p 8080"
+  end
 
 end
