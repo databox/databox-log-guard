@@ -5,6 +5,8 @@ gem 'bundler'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
+gem 'haml'
+
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 

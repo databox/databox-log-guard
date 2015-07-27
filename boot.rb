@@ -7,6 +7,7 @@ require 'omniauth-google-oauth2'
 
 require 'yaml'
 require 'erb'
+require 'haml'
 
 ENV['LOG_GUARD_ENV'] ||= 'development'
 
