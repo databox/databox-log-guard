@@ -52,7 +52,9 @@ namespace :deploy do
 
   desc "Start the Unicorn process when it isn't already running."
   task :start do
-    execute "bundle exec unicorn -Dc #{shared_path}/config/unicorn.rb -E production -p 8080"
+    on roles(:all) do
+      execute "bundle exec unicorn -D -c #{shared_path}/config/unicorn.rb -E production -p 8080"
+    end
   end
 
 end
