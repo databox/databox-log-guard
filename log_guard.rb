@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require_relative './boot'
 
-OmniAuth.config.full_host = "http://localhost:8080"
+# OmniAuth.config.full_host = "http://localhost:8080"
 
 class LogGouard < Sinatra::Base
   helpers Sinatra::Cookies

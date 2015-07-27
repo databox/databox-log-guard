@@ -54,7 +54,14 @@ namespace :deploy do
   task :start do
     on roles(:all) do
       #within current_path do
-        execute "~/.rvm/bin/rvm bundle exec unicorn -c #{shared_path}/config/unicorn.rb -p 8080 -E production"
+
+        within "#{fetch(:deploy_to)}/current/" do
+          #execute :bundle, :exec, :'script/delayed_job', fetch(:delayed_job_args, ""), :restart
+          execute :bundle, :exec, :unicorn, "-D", "-p", "8080", "-c", "./config/unicorn.rb"
+
+        end
+
+        # execute "~/.rvm/bin/rvm bundle exec unicorn -c #{shared_path}/config/unicorn.rb -p 8080 -E production"
       #end
       # execute "bundle exec unicorn -D -c #{shared_path}/config/unicorn.rb -E production -p 8080"
     end
