@@ -32,7 +32,8 @@ class LogGouard < Sinatra::Base
   end
 
   get '/logout' do
-    cookies[:authed]=nil
+    # cookies[:authed]=nil
+    cookies.delete_cookie
     redirect to('/')
   end
 
