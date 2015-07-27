@@ -53,9 +53,9 @@ namespace :deploy do
   desc "Start the Unicorn process when it isn't already running."
   task :start do
     on roles(:all) do
-      within release_path do
-        execute "unicorn -c #{shared_path}/config/unicorn.rb -p 8080 -E production"
-      end
+      #within current_path do
+        execute "~/.rvm/bin/rvm bundle exec unicorn -c #{shared_path}/config/unicorn.rb -p 8080 -E production"
+      #end
       # execute "bundle exec unicorn -D -c #{shared_path}/config/unicorn.rb -E production -p 8080"
     end
   end
