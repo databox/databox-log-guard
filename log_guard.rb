@@ -24,7 +24,11 @@ class LogGouard < Sinatra::Base
     '<a href="/auth/google_oauth2">Login w/ Google Account</a>'
   end
 
+  get '/test' do
+    {ime: "Oto"}.to_json
+  end
+
   get '/auth/google_oauth2/callback' do
-    request.env["omniauth.auth"]
+    request.env["omniauth.auth"].to_json
   end
 end

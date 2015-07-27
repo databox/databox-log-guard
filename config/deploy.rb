@@ -54,7 +54,7 @@ namespace :deploy do
   task :start do
     on roles(:all) do
       within "#{fetch(:deploy_to)}/current/" do
-        execute :bundle, :exec, :unicorn, "-D", "-p", "8080", "-c", "./config/unicorn.rb", "-e", fetch(:rails_env)
+        execute :bundle, :exec, :unicorn, "-D", "--env", fetch(:rails_env, "production"), "-p", "8080", "-c", "./config/unicorn.rb"
       end
     end
   end
