@@ -1,0 +1,11 @@
+default: &default
+  auth:
+    google_oauth2:
+      client_id: 1011183496737-54cjhtcltgd62mepjua2484qc440krlq.apps.googleusercontent.com
+      secret_id: R-3VyF8rSEH85LXkyDGp-bER
+
+development:
+  <<: *default
+
+production:
+  <<: *default
