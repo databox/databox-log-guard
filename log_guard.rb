@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require_relative './boot'
 
-OmniAuth.config.full_host = CONFIG["full_host"]
 
 class LogGouard < Sinatra::Base
   enable :inline_templates
@@ -20,6 +19,8 @@ class LogGouard < Sinatra::Base
                  # provider_ignores_state: true,
                  # name: 'Databox Logging'
              }
+
+    OmniAuth.config.full_host = CONFIG["full_host"]
   end
 
 	get '/' do
