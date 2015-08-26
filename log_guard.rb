@@ -74,6 +74,10 @@ __END__
       %a{href:"/kopf"} Kopf
       \-
       ElasticSearch cluster management
+    %li
+      %a{href:"/req-res"} req-res
+      \-
+      Requests and responses for API
   %br/
   %br/
   %small
